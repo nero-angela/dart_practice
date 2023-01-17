@@ -1,7 +1,15 @@
-class A {
+import 'package:equatable/equatable.dart';
+
+class A extends Equatable {
   final int value;
 
   const A(this.value);
+
+  @override
+  List<Object?> get props => [value];
+
+  @override
+  bool get stringify => true;
 }
 
 void main() {
