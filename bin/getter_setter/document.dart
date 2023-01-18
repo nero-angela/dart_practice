@@ -9,7 +9,7 @@ class Document {
   int updateCount = 0;
 
   // 통계
-  late String statistic = "readCount : $readCount / updateCount : $updateCount";
+  String get statistic => "readCount : $readCount / updateCount : $updateCount";
 
   Document(this.content);
 }
