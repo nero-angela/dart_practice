@@ -8,6 +8,13 @@ class Person {
     required this.name,
     required this.age,
   });
+
+  factory Person.fromJson(Map<String, dynamic> json) {
+    return Person(
+      name: json['name'],
+      age: json['age'],
+    );
+  }
 }
 
 void main() {
@@ -17,4 +24,8 @@ void main() {
   /// JSON 포맷 String -> Map<String, dynamic>
   Map<String, dynamic> jsonMap = jsonDecode(jsonString);
   print(jsonMap);
+
+  /// Map<String, dynamic> -> Person
+  Person person = Person.fromJson(jsonMap);
+  print(person);
 }
