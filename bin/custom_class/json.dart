@@ -15,6 +15,13 @@ class Person {
       age: json['age'],
     );
   }
+
+  Map<String, dynamic> toJson() {
+    return {
+      "name": name,
+      "age": age,
+    };
+  }
 }
 
 void main() {
@@ -28,4 +35,12 @@ void main() {
   /// Map<String, dynamic> -> Person
   Person person = Person.fromJson(jsonMap);
   print(person);
+
+  /// Person -> Map<String, dynamic>
+  Map<String, dynamic> personMap = person.toJson();
+  print(personMap);
+
+  /// Map<String, dynamic> -> JSON 포맷 String
+  String personString = jsonEncode(personMap);
+  print(personString);
 }
